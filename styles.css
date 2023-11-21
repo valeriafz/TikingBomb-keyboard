@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  transition: 0.2s;
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.keyboard_wrapp {
+  max-width: 1008px;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  order: 2;
+}
+
+.row {
+  display: flex;
+}
+
+.keys {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  transition: 0.2s;
+  z-index: 5;
+  border-radius: 10px;
+}
+
+.backspace_key {
+  width: 120px;
+}
+
+.tab_key {
+  width: 90px;
+}
+
+.slash_key {
+  width: 90px;
+}
+
+.caps_lock_key {
+  width: 128px;
+}
+
+.enter_key {
+  width: 120px;
+}
+
+.shift_key {
+  width: 124px;
+}
+
+.keys.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.keys.remove {
+  animation: keys_animation 0.5s forwards;
+}
+
+@keyframes keys_animation {
+  0% {
+    background-color: #333;
+    color: #fff;
+  }
+  100% {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+body.active {
+  background-color: rgb(54, 54, 54);
+}
+
+.result.active {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-left: 10px;
+  transition: 0.2s;
+  margin: 50px;
+  color: #fff;
+  font-size: 26px;
+}
+
+.result div {
+  flex: 1;
+  height: 70px;
+  width: 70px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.7s;
+}
+
+.reset {
+  background-color: black !important;
+}
+
+.left {
+  background-color: crimson;
+  border: 2px solid crimson;
+}
+
+.left.active {
+  color: crimson;
+}
+
+.pink {
+  background-color: coral;
+  border: 2px solid coral;
+}
+.pink.active {
+  color: coral;
+}
+
+.orange {
+  background-color: darkorange;
+  border: 2px solid darkorange;
+}
+.orange.active {
+  color: darkorange;
+}
+
+.yellow {
+  background-color: gold;
+  border: 2px solid gold;
+}
+.yellow.active {
+  color: gold;
+}
+
+.bright {
+  background-color: khaki;
+  border: 2px solid khaki;
+}
+.bright.active {
+  color: khaki;
+}
+
+.active {
+  background-color: transparent;
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
