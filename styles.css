@@ -62,10 +62,7 @@ p {
   width: 120px;
 }
 
-.tab_key {
-  width: 90px;
-}
-
+.tab_key,
 .slash_key {
   width: 90px;
 }

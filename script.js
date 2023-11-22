@@ -2,8 +2,8 @@ const keys = document.querySelectorAll(".keys");
 const resultEls = document.querySelectorAll(".result div");
 const countDown = document.querySelector(".countdown");
 
-const targetArray = ["A", "B", "C", "5"];
-const keyMap = new Map();
+const targetArray = ["A", "B", "C", "5"]; // not randomized for now to make fixing bugs easier
+const keyMap = new Map(); // de altfel ma chinuiam cu multe ifs/switch cases
 
 let won = 0;
 let resultIndex = 0;
@@ -19,6 +19,18 @@ resultEls.forEach((item) => {
   item.addEventListener("transitionend", resetResult);
 });
 
+const showAlert = (str) => {
+  let delay = 0;
+
+  const alertInterval = setInterval(() => {
+    delay++;
+    if (delay === 1) {
+      clearInterval(alertInterval);
+      alert(str);
+    }
+  }, 1000);
+};
+
 const updateTime = () => {
   const minutes = Math.floor(timeLeft / 60);
   let seconds = timeLeft % 60;
@@ -33,7 +45,7 @@ const updateTime = () => {
     return;
   } else if (timeLeft === 0) {
     timeLeft = 60;
-    alert("You lost! The bomb has exploded!");
+    showAlert("You lost! The bomb has exploded!");
   }
 };
 
@@ -72,7 +84,7 @@ const handleKey = (e) => {
         if (won === 4) {
           timeLeft = 60;
           updateTime();
-          alert("You won! The bomb has been diffused!");
+          showAlert("You won! The bomb has been diffused!");
         }
 
         resultEls.forEach((el) => {
