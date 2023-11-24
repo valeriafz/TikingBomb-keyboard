@@ -2,7 +2,14 @@ const keys = document.querySelectorAll(".keys");
 const resultEls = document.querySelectorAll(".result div");
 const countDown = document.querySelector(".countdown");
 
-const targetArray = ["A", "B", "C", "5"]; // not randomized for now to make fixing bugs easier
+const generateRandomValue = () => {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const randomIndex = Math.floor(Math.random() * characters.length);
+  return characters[randomIndex];
+};
+
+const targetArray = Array.from({ length: 4 }, generateRandomValue);
+
 const keyMap = new Map(); // de altfel ma chinuiam cu multe ifs/switch cases
 
 let won = 0;
